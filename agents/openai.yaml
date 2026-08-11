@@ -1,0 +1,4 @@
+interface:
+  display_name: "Regression Recovery"
+  short_description: "Trace and safely repair code regressions"
+  default_prompt: "Use $regression-recovery to identify the first bad change and port the smallest compatible repair into the current code."
