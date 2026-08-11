@@ -1,11 +1,23 @@
 ---
 name: regression-recovery
-description: Diagnose and safely repair a code regression by proving the failure, locating the last known-good and first bad revisions, identifying the causal change and its intent, and porting the smallest compatible known-good behavior into the current code. Use when a feature used to work, a recent deployment introduced a defect, a user asks to trace or roll back a regression, or old working behavior must be restored without losing newer features, schema changes, safeguards, or unrelated work.
+description: Find and safely fix software features that used to work but stopped working after a code change. Use when something breaks after an update or deployment and Codex should identify when and why it broke, restore only the working behavior, preserve newer improvements and safeguards, test the repair, and explain the result clearly.
 ---
 
 # Regression Recovery
 
-Restore behavior, not an old repository snapshot. Prove causality, preserve current contracts, and port only the minimum compatible repair.
+Use this skill when part of a software project worked before but stopped working after an update.
+
+In simple terms, the skill:
+
+1. Reproduces the problem so it can tell the difference between working and broken behavior.
+2. Searches the project's history to find the last version that worked and the change that introduced the problem.
+3. Checks why that change was originally made.
+4. Brings back only the working part instead of rolling the entire project backward.
+5. Confirms that the repair still works with newer features, databases, APIs, security rules, and safety controls.
+6. Tests the repair safely before release.
+7. Produces a clear report showing what broke, why it broke, what was repaired, and what risks remain.
+
+The skill does not blindly undo commits. It protects current work and keeps newer improvements whenever possible. If a real external service must be tested, it can use a small, budget-limited live test when the user has authorized it.
 
 ## Operating contract
 
@@ -148,4 +160,3 @@ Stop and request direction when:
 - The repair requires destructive data/schema rollback.
 - Multiple plausible culprit ranges remain after safe diagnostics.
 - The candidate affects environments, repositories, or users outside the authorized scope.
-

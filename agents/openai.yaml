@@ -1,4 +1,4 @@
 interface:
   display_name: "Regression Recovery"
-  short_description: "Trace and safely repair code regressions"
-  default_prompt: "Use $regression-recovery to identify the first bad change and port the smallest compatible repair into the current code."
+  short_description: "Safely restore features that stopped working"
+  default_prompt: "Use $regression-recovery to find why this feature stopped working, restore the smallest safe part of the last working behavior, and explain the repair clearly."
