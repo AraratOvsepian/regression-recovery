@@ -5,7 +5,7 @@ description: Find and safely fix software features that used to work but stopped
 
 # Regression Recovery
 
-Use this skill when part of a software project worked before but stopped working after an update.
+Regression Recovery helps fix software that worked before but stopped working after an update. It finds when and why the problem started, restores only the working part without removing newer improvements, tests the repair safely, and clearly explains what changed.
 
 In simple terms, the skill:
 
